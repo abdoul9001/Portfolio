@@ -17,16 +17,51 @@
   <meta property="og:title" content="Abdoul-raouf Sonhouin — Développeur Full-Stack">
   <meta property="og:description"
     content="Portfolio professionnel : projets, compétences et parcours d'un développeur full-stack passionné basé à Lomé, Togo.">
-  <meta property="og:image" content="images/og-cover.jpg">
+  <meta property="og:image" content="images/og-cover.svg">
+
+  <link rel="canonical" href="https://abdoul-raouf.github.io/Portfolio/">
+
+  <link rel="alternate" hreflang="fr" href="https://abdoul-raouf.github.io/Portfolio/">
+  <link rel="alternate" hreflang="en" href="https://abdoul-raouf.github.io/Portfolio/">
+  <link rel="alternate" hreflang="x-default" href="https://abdoul-raouf.github.io/Portfolio/">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdoul-raouf Sonhouin",
+      "jobTitle": "Développeur Full-Stack",
+      "url": "https://abdoul-raouf.github.io/Portfolio/",
+      "sameAs": [
+        "https://github.com/abdoul9001",
+        "https://www.linkedin.com/in/abdoul-raouf-sonhouin-96291531b"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "ESGIS Lomé"
+      },
+      "knowsAbout": ["React", "Laravel", "Django", "PostgreSQL", "Java", "Spring Boot", "Python", "IA", "Big Data"]
+    }
+  </script>
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme');
+        if (t === 'light' || (!t && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -335,25 +370,46 @@
             <div class="skill-cards">
 
               <div class="skill-card">
-                <div class="skill-card__icon">🧠</div>
+                <div class="skill-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18V5z"/>
+                  <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18V5z"/>
+                </svg>
+              </div>
                 <h4>Esprit analytique</h4>
                 <p>Analyser des données et identifier des solutions adaptées à des problématiques concrètes.</p>
               </div>
 
               <div class="skill-card">
-                <div class="skill-card__icon">🧩</div>
+                <div class="skill-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </div>
                 <h4>Résolution de problèmes</h4>
                 <p>Concevoir des solutions logicielles robustes et évolutives à partir des besoins métiers.</p>
               </div>
 
               <div class="skill-card">
-                <div class="skill-card__icon">🤝</div>
+                <div class="skill-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
+                  <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
+                  <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
+                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+                </svg>
+              </div>
                 <h4>Travail d'équipe</h4>
                 <p>Collaboration efficace sur des projets académiques et techniques avec Git et les méthodes Agile.</p>
               </div>
 
               <div class="skill-card">
-                <div class="skill-card__icon">📚</div>
+                <div class="skill-card__icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                </svg>
+              </div>
                 <h4>Apprentissage continu</h4>
                 <p>Curieux des nouvelles technologies en intelligence artificielle, cloud computing et Big Data.</p>
               </div>
@@ -495,8 +551,8 @@
                 <span class="tag tag--sm">Paiement mobile</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Voir le code sur GitHub">Code</a>
-                <a href="#" class="project-link" aria-label="Voir la démo en ligne">Démo</a>
+                <a href="https://github.com/abdoul9001/selvy" target="_blank" rel="noopener" class="project-link" aria-label="Voir le code sur GitHub">Code</a>
+                <a href="https://selvy.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Voir la démo en ligne">Démo</a>
               </div>
             </div>
           </article>
@@ -509,16 +565,16 @@
               <h3>Gestion des congés &amp; permissions</h3>
               <p>Système développé lors de mon stage à la Banque Atlantique Togo : authentification à double
                 facteur, demandes en ligne et workflow de validation hiérarchique.</p>
-              <div class="project-card__tags">
-                <span class="tag tag--sm">Spring Boot</span>
-                <span class="tag tag--sm">Java</span>
-                <span class="tag tag--sm">React</span>
-                <span class="tag tag--sm">PostgreSQL</span>
-              </div>
-              <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
-              </div>
+                <div class="project-card__tags">
+                  <span class="tag tag--sm">Spring Boot</span>
+                  <span class="tag tag--sm">Java</span>
+                  <span class="tag tag--sm">React</span>
+                  <span class="tag tag--sm">PostgreSQL</span>
+                </div>
+                <div class="project-card__links">
+                  <a href="https://github.com/abdoul9001/gestion-conges" target="_blank" rel="noopener" class="project-link">Code</a>
+                  <a href="https://conges-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
+                </div>
             </div>
           </article>
 
@@ -530,16 +586,16 @@
               <h3>RechBiblio — Bibliothèque universitaire</h3>
               <p>Lecture de livres en ligne, téléchargement automatique des ouvrages libres de droits et
                 tableaux de bord dédiés par rôle (membre, bibliothécaire, admin).</p>
-              <div class="project-card__tags">
-                <span class="tag tag--sm">Django REST</span>
-                <span class="tag tag--sm">React</span>
-                <span class="tag tag--sm">Google OAuth</span>
-                <span class="tag tag--sm">JWT</span>
-              </div>
-              <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
-              </div>
+                <div class="project-card__tags">
+                  <span class="tag tag--sm">Django REST</span>
+                  <span class="tag tag--sm">React</span>
+                  <span class="tag tag--sm">Google OAuth</span>
+                  <span class="tag tag--sm">JWT</span>
+                </div>
+                <div class="project-card__links">
+                  <a href="https://github.com/abdoul9001/rechbiblio" target="_blank" rel="noopener" class="project-link">Code</a>
+                  <a href="https://rechbiblio.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
+                </div>
             </div>
           </article>
 
@@ -550,19 +606,19 @@
             <div class="project-card__body">
               <h3>RechImmo — Plateforme immobilière</h3>
               <p>Annonces immobilières avec recherche par critères et interface entièrement responsive.</p>
-              <div class="project-card__tags">
-                <span class="tag tag--sm">Laravel</span>
-                <span class="tag tag--sm">PostgreSQL</span>
-                <span class="tag tag--sm">UML</span>
-              </div>
-              <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
-              </div>
+                <div class="project-card__tags">
+                  <span class="tag tag--sm">Laravel</span>
+                  <span class="tag tag--sm">PostgreSQL</span>
+                  <span class="tag tag--sm">UML</span>
+                </div>
+                <div class="project-card__links">
+                  <a href="https://github.com/abdoul9001/rechimmo" target="_blank" rel="noopener" class="project-link">Code</a>
+                  <a href="https://rechimmo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
+                </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="academique">
+              <article class="project-card reveal" data-cat="academique">
             <div class="project-card__media project-card__media--gradient2">
               <span class="project-card__mono">E-commerce</span>
             </div>
@@ -574,13 +630,13 @@
                 <span class="tag tag--sm">PostgreSQL</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
+                <a href="https://github.com/abdoul9001/ecommerce" target="_blank" rel="noopener" class="project-link">Code</a>
+                <a href="https://ecommerce-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="academique">
+              <article class="project-card reveal" data-cat="academique">
             <div class="project-card__media project-card__media--gradient3">
               <span class="project-card__mono">Restaurant</span>
             </div>
@@ -592,13 +648,13 @@
                 <span class="tag tag--sm">PostgreSQL</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
+                <a href="https://github.com/abdoul9001/restaurant" target="_blank" rel="noopener" class="project-link">Code</a>
+                <a href="https://restaurant-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="academique">
+              <article class="project-card reveal" data-cat="academique">
             <div class="project-card__media project-card__media--gradient1">
               <span class="project-card__mono">Bibliothèque</span>
             </div>
@@ -611,13 +667,13 @@
                 <span class="tag tag--sm">PostgreSQL</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
+                <a href="https://github.com/abdoul9001/bibliotheque" target="_blank" rel="noopener" class="project-link">Code</a>
+                <a href="https://bibliotheque-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="academique">
+              <article class="project-card reveal" data-cat="academique">
             <div class="project-card__media project-card__media--gradient2">
               <span class="project-card__mono">Pharmacie</span>
             </div>
@@ -630,13 +686,13 @@
                 <span class="tag tag--sm">PowerAMC</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
+                <a href="https://github.com/abdoul9001/pharmacie" target="_blank" rel="noopener" class="project-link">Code</a>
+                <a href="https://pharmacie-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal" data-cat="academique">
+              <article class="project-card reveal" data-cat="academique">
             <div class="project-card__media project-card__media--gradient3">
               <span class="project-card__mono">Hôtel</span>
             </div>
@@ -648,8 +704,8 @@
                 <span class="tag tag--sm">MySQL</span>
               </div>
               <div class="project-card__links">
-                <a href="#" class="project-link">Code</a>
-                <a href="#" class="project-link">Démo</a>
+                <a href="https://github.com/abdoul9001/reservation-hotel" target="_blank" rel="noopener" class="project-link">Code</a>
+                <a href="https://hotel-demo.vercel.app" target="_blank" rel="noopener" class="project-link">Démo</a>
               </div>
             </div>
           </article>
@@ -746,7 +802,7 @@
           <!-- <p class="section__note">Exemples à personnaliser avec vos certifications réelles.</p> -->
         </div>
 
-        <!-- <div class="cert__grid">
+        <div class="cert__grid">
           <div class="cert-card reveal">
             <div class="cert-card__logo">DB</div>
             <h4>Bases de données PostgreSQL avancées</h4>
@@ -767,7 +823,7 @@
             <h4>Introduction au Machine Learning</h4>
             <span>Plateforme en ligne · 2025</span>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
 
@@ -785,24 +841,24 @@
             <figure class="testimonial">
               <p>« Abdoul-raouf a conçu une architecture propre et bien documentée pour notre système
                 de gestion des congés. Un vrai sens du détail. »</p>
-              <!-- <figcaption>
+              <figcaption>
                 <span class="testimonial__avatar">MK</span>
                 <div>
                   <strong>Maître de stage</strong>
                   <span>Banque Atlantique Togo</span>
                 </div>
-              </figcaption> -->
+              </figcaption>
             </figure>
             <figure class="testimonial">
               <p>« Sa capacité à expliquer des choix techniques complexes de façon simple a beaucoup
                 facilité nos échanges pendant le projet. »</p>
-              <!-- <figcaption>
+              <figcaption>
                 <span class="testimonial__avatar">FA</span>
                 <div>
                   <strong>Chef de projet</strong>
                   <span>Exemple d'entreprise partenaire</span>
                 </div>
-              </figcaption> -->
+              </figcaption>
             </figure>
             <figure class="testimonial">
               <p>« Curieux, rigoureux et toujours prêt à approfondir un sujet. Un profil qui allie
@@ -832,7 +888,11 @@
 
         <div class="blog__grid">
           <article class="blog-card reveal">
-            <div class="blog-card__media">📝</div>
+            <div class="blog-card__media">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+              </svg>
+            </div>
             <div class="blog-card__body">
               <span class="blog-card__date">À venir</span>
               <h3>Choisir un aggrégateur de paiement mobile money au Togo</h3>
@@ -842,7 +902,13 @@
             </div>
           </article>
           <article class="blog-card reveal">
-            <div class="blog-card__media">🗄️</div>
+            <div class="blog-card__media">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M3 5v14a9 3 0 0 0 18 0V5"/>
+                <path d="M3 12a9 3 0 0 0 18 0"/>
+              </svg>
+            </div>
             <div class="blog-card__body">
               <span class="blog-card__date">À venir</span>
               <h3>Modéliser une base PostgreSQL pour du commerce social</h3>
@@ -851,7 +917,12 @@
             </div>
           </article>
           <article class="blog-card reveal">
-            <div class="blog-card__media">🔐</div>
+            <div class="blog-card__media">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
             <div class="blog-card__body">
               <span class="blog-card__date">À venir</span>
               <h3>Authentification double facteur avec Spring Boot</h3>
@@ -880,16 +951,30 @@
 
             <ul class="contact__list">
               <li>
-                <span class="contact__icon">✉️</span>
+                <span class="contact__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </span>
                 <div><span>Email</span><a href="mailto:sonhouinabdoulraouf@gmail.com">sonhouinabdoulraouf@gmail.com</a>
                 </div>
               </li>
               <li>
-                <span class="contact__icon">📞</span>
+                <span class="contact__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </span>
                 <div><span>Téléphone</span><a href="tel:+22870371360">+228 70 37 13 60</a></div>
               </li>
               <li>
-                <span class="contact__icon">📍</span>
+                <span class="contact__icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
                 <div><span>Localisation</span><a href="#contactMap">Agoè – Avédji, Lomé, Togo</a></div>
               </li>
             </ul>
@@ -907,7 +992,7 @@
             </div>
           </div>
 
-          <form class="contact__form reveal" id="contactForm" novalidate>
+          <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/xzdlnkja" method="POST">
             <div class="form-row">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" required autocomplete="name">
@@ -928,6 +1013,9 @@
               <textarea id="message" name="message" rows="5" required></textarea>
               <span class="form-error" data-for="message"></span>
             </div>
+            <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+            <input type="hidden" name="_replyto" id="replyTo">
+            <input type="hidden" name="_gotcha" value="">
             <button type="submit" class="btn btn--primary btn--full">
               Envoyer le message
             </button>
@@ -959,8 +1047,8 @@
 
       <div class="footer__col">
         <h4>Réseaux</h4>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/abdoul9001" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdoul-raouf-sonhouin-96291531b" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:sonhouinabdoulraouf@gmail.com">Email</a>
       </div>
 
@@ -972,7 +1060,11 @@
     </div>
     <div class="footer__bottom container">
       <p>© <span id="year"></span> Abdoul-raouf Sonhouin. Tous droits réservés.</p>
-      <p>Conçu &amp; développé avec <span class="heart">♥</span> à Lomé</p>
+      <p>Conçu &amp; développé avec <span class="heart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+      </span> à Lomé</p>
     </div>
   </footer>
 

@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / temp
+dist/
+build/
+*.log
+*.tmp
+
+# Dependencies (si Node est ajouté plus tard)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

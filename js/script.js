@@ -232,18 +232,31 @@
         return;
       }
 
-      /* Simulation d'envoi (aucun backend connecté) : à remplacer par un
-         appel à votre service d'envoi (Formspree, EmailJS, API maison, etc.) */
+      document.getElementById("replyTo").value = document.getElementById("email").value;
+
       var submitBtn = form.querySelector("button[type=submit]");
       submitBtn.disabled = true;
       status.style.color = "";
       status.textContent = "Envoi en cours…";
 
-      setTimeout(function () {
-        status.textContent = "Message envoyé avec succès ! Je vous réponds rapidement.";
-        form.reset();
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      }).then(function (res) {
+        if (res.ok) {
+          status.textContent = "Message envoyé avec succès ! Je vous réponds rapidement.";
+          form.reset();
+        } else {
+          status.textContent = "Erreur lors de l'envoi. Réessayez ou envoyez un email directement.";
+          status.style.color = "#FF6B6B";
+        }
+      }).catch(function () {
+        status.textContent = "Erreur réseau. Réessayez plus tard.";
+        status.style.color = "#FF6B6B";
+      }).finally(function () {
         submitBtn.disabled = false;
-      }, 900);
+      });
     });
   }
 
