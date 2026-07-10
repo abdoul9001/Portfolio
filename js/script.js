@@ -46,6 +46,7 @@
   var nav = document.getElementById("nav");
   var navLinks = document.getElementById("navLinks");
   var navBurger = document.getElementById("navBurger");
+  var navOverlay = document.getElementById("navOverlay");
   var linkEls = document.querySelectorAll(".nav__link");
 
   function onScrollNav() {
@@ -54,19 +55,72 @@
   onScrollNav();
   window.addEventListener("scroll", onScrollNav, { passive: true });
 
+  function openMenu() {
+    navLinks.classList.add("is-open");
+    navBurger.classList.add("is-open");
+    navBurger.setAttribute("aria-expanded", "true");
+    if (navOverlay) navOverlay.classList.add("is-visible");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove("is-open");
+    navBurger.classList.remove("is-open");
+    navBurger.setAttribute("aria-expanded", "false");
+    if (navOverlay) navOverlay.classList.remove("is-visible");
+    document.body.style.overflow = "";
+  }
+
   navBurger.addEventListener("click", function () {
-    var isOpen = navLinks.classList.toggle("is-open");
-    navBurger.classList.toggle("is-open", isOpen);
-    navBurger.setAttribute("aria-expanded", String(isOpen));
+    if (navLinks.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
+  if (navOverlay) {
+    navOverlay.addEventListener("click", closeMenu);
+  }
+
   linkEls.forEach(function (link) {
-    link.addEventListener("click", function () {
-      navLinks.classList.remove("is-open");
-      navBurger.classList.remove("is-open");
-      navBurger.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeMenu);
   });
+
+  // --- Focus trap pour le menu mobile ---
+  (function () {
+    var firstFocusable = null;
+    var lastFocusable = null;
+
+    function getFocusables() {
+      var focusables = navLinks.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"]');
+      if (focusables.length) {
+        firstFocusable = focusables[0];
+        lastFocusable = focusables[focusables.length - 1];
+      }
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (!navLinks.classList.contains("is-open")) return;
+      if (e.key === "Escape") { closeMenu(); return; }
+      if (e.key !== "Tab") return;
+
+      getFocusables();
+      if (!firstFocusable || !lastFocusable) return;
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    });
+  })();
 
   var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
   var navObserver = new IntersectionObserver(function (entries) {
@@ -75,6 +129,11 @@
         var id = entry.target.getAttribute("id");
         linkEls.forEach(function (link) {
           link.classList.toggle("is-active", link.getAttribute("href") === "#" + id);
+          if (link.getAttribute("href") === "#" + id) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
         });
       }
     });
@@ -161,18 +220,21 @@
   if (track && dotsWrap) {
     var slides = track.children.length;
     var current = 0;
+    var autoplay = null;
 
     for (var i = 0; i < slides; i++) {
       var dot = document.createElement("button");
       dot.setAttribute("aria-label", "Témoignage " + (i + 1));
       if (i === 0) dot.classList.add("is-active");
       (function (idx) {
-        dot.addEventListener("click", function () { goToSlide(idx); });
+        dot.addEventListener("click", function () { goToSlide(idx); resetAutoplay(); });
       })(i);
       dotsWrap.appendChild(dot);
     }
 
     function goToSlide(idx) {
+      if (idx < 0) idx = slides - 1;
+      if (idx >= slides) idx = 0;
       current = idx;
       track.style.transform = "translateX(-" + (100 * current) + "%)";
       Array.prototype.forEach.call(dotsWrap.children, function (d, i2) {
@@ -180,11 +242,64 @@
       });
     }
 
-    var autoplay = setInterval(function () {
-      goToSlide((current + 1) % slides);
-    }, 5500);
+    function startAutoplay() {
+      if (autoplay) clearInterval(autoplay);
+      autoplay = setInterval(function () {
+        goToSlide(current + 1);
+      }, 5500);
+    }
 
-    track.parentElement.addEventListener("mouseenter", function () { clearInterval(autoplay); });
+    function resetAutoplay() {
+      if (autoplay) clearInterval(autoplay);
+      startAutoplay();
+    }
+
+    startAutoplay();
+
+    track.parentElement.addEventListener("mouseenter", function () {
+      if (autoplay) clearInterval(autoplay);
+    });
+    track.parentElement.addEventListener("mouseleave", function () {
+      startAutoplay();
+    });
+
+    // --- Swipe tactile pour mobile ---
+    (function () {
+      var wrapper = track.parentElement;
+      var startX = 0;
+      var currentX = 0;
+      var isDragging = false;
+
+      wrapper.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        track.style.transition = "none";
+        if (autoplay) clearInterval(autoplay);
+      }, { passive: true });
+
+      wrapper.addEventListener("touchmove", function (e) {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        var diff = currentX - startX;
+        var offset = -current * 100 + (diff / wrapper.offsetWidth) * 100;
+        track.style.transform = "translateX(" + offset + "%)";
+      }, { passive: true });
+
+      wrapper.addEventListener("touchend", function () {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = "";
+        var diff = currentX - startX;
+        var threshold = wrapper.offsetWidth * 0.15;
+        if (Math.abs(diff) > threshold) {
+          if (diff < 0) goToSlide(current + 1);
+          else goToSlide(current - 1);
+        } else {
+          goToSlide(current);
+        }
+        startAutoplay();
+      }, { passive: true });
+    })();
   }
 
   /* ---------- 9. FORMULAIRE DE CONTACT ---------- */
@@ -260,7 +375,19 @@
     });
   }
 
-  /* ---------- 10. RETOUR EN HAUT ---------- */
+  /* ---------- 10. PROGRESS BAR ---------- */
+  var progressBar = document.getElementById("progressBar");
+  if (progressBar) {
+    window.addEventListener("scroll", function () {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      progressBar.style.transform = "scaleX(" + progress + ")";
+      progressBar.setAttribute("aria-valuenow", Math.round(progress * 100));
+    }, { passive: true });
+  }
+
+  /* ---------- 11. RETOUR EN HAUT ---------- */
   var backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", function () {
     backToTop.classList.toggle("is-visible", window.scrollY > 600);
@@ -270,7 +397,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  /* ---------- 11. ANNÉE COURANTE (FOOTER) ---------- */
+  /* ---------- 12. ANNÉE COURANTE (FOOTER) ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 

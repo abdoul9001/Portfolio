@@ -13,6 +13,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 ul { list-style: none; }
 input, textarea { font: inherit; color: inherit; }
 
+/* --- Breakpoints centralisés (à utiliser dans les media queries) --- */
+/* Usage: @media (max-width: 768px) { ... } */
+/* --bp-xs: 400px; --bp-sm: 520px; --bp-md: 640px; --bp-tb: 768px; --bp-lg: 900px; --bp-xl: 1024px; --bp-xxl: 1400px; */
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
@@ -225,6 +229,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex; align-items: center;
   padding-top: var(--nav-h);
   overflow: hidden;
@@ -584,6 +589,262 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { transform: translateY(-4px); }
 
-/* ---------- 21. SCROLL REVEAL ---------- */
+/* ---------- 21. PROGRESS BAR ---------- */
+.progress-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9998;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .2s ease-out;
+  will-change: transform;
+}
+
+/* ---------- 22. MOBILE MENU OVERLAY ---------- */
+.nav-overlay {
+  position: fixed; inset: 0; z-index: 499;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .35s var(--ease), visibility .35s var(--ease);
+}
+.nav-overlay.is-visible { opacity: 1; visibility: visible; }
+
+/* ---------- 23. STICKY CTA (mobile uniquement) ---------- */
+.sticky-cta {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 450;
+  padding: 12px 16px;
+  background: color-mix(in srgb, var(--c-bg) 86%, transparent);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--c-border);
+}
+.sticky-cta .btn { font-size: 1rem; padding: 14px 26px; }
+@media (max-width: 520px) {
+  .sticky-cta { display: block; }
+  body { padding-bottom: 70px; }
+}
+
+/* ---------- 24. SCROLL REVEAL ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- 25. RESPONSIVE — COMPLÉMENTS MOBILE & TABLETTE ---------- */
+
+/* --- Petits téléphones <= 400px --- */
+@media (max-width: 400px) {
+  .container { padding-inline: 16px; }
+
+  .hero__name { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+  .hero__role { font-size: .9rem; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
+  .hero__intro { font-size: .92rem; }
+
+  .code-window { transform: none; }
+  .code-window__body { font-size: .7rem; padding: 16px 14px; }
+  .code-window__bar { padding: 10px 14px; flex-wrap: wrap; }
+
+  .section { padding: 70px 0; }
+  .section__head { margin-bottom: 36px; }
+  .section__title { font-size: 1.6rem; }
+
+  .service-card { padding: 22px; }
+  .service-card h3 { font-size: .95rem; }
+
+  .project-card__media { height: 110px; }
+  .project-card__body { padding: 16px; }
+  .project-card__body h3 { font-size: .95rem; }
+
+  .contact__form { padding: 22px; }
+
+  .footer__inner { grid-template-columns: 1fr; gap: 24px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+
+  .back-to-top { width: 40px; height: 40px; bottom: 16px; right: 16px; }
+
+  .timeline { padding-left: 24px; }
+  .timeline__dot { left: -24px; width: 10px; height: 10px; }
+
+  .about__facts { gap: 14px; }
+  .fact { padding-left: 10px; }
+
+  .hero__scroll { display: none; }
+  .formation-card { padding: 20px; }
+  .formation-card h3 { font-size: .9rem; }
+
+  .cert-card { padding: 16px; }
+  .cert-card h4 { font-size: .82rem; }
+
+  .blog-card__body { padding: 16px; }
+  .blog-card h3 { font-size: .9rem; }
+
+  .testimonial { padding: 24px 18px; }
+  .testimonial p { font-size: .92rem; }
+
+  .contact__lead { font-size: .92rem; }
+}
+
+/* --- Téléphones moyens <= 520px --- */
+@media (max-width: 520px) {
+  .hero__inner { padding-block: 30px; gap: 24px; }
+  .hero__socials { justify-content: center; }
+  .hero__cta { justify-content: center; }
+
+  .skills__col-title { font-size: 1rem; }
+  .skill-cards { grid-template-columns: 1fr; }
+  .tags { gap: 6px; }
+  .tag { font-size: .7rem; padding: 5px 10px; }
+
+  .projects__filter { justify-content: center; }
+  .filter-btn { font-size: .78rem; padding: 7px 14px; }
+
+  .testimonials { padding-inline: 0; }
+
+  .contact__socials { flex-wrap: wrap; }
+  .contact__socials a { font-size: .78rem; padding: 7px 14px; }
+
+  .hero__panel { max-width: 100%; }
+
+  .nav__link { font-size: .85rem; padding: 12px 6px; }
+
+  .about__badge { right: -8px; bottom: -12px; padding: 10px 14px; }
+  .about__badge strong { font-size: 1.1rem; }
+}
+
+/* --- Grands téléphones / petites tablettes <= 640px --- */
+@media (max-width: 640px) {
+  .hero__inner { gap: 32px; }
+  .hero__name { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .hero__intro { max-width: 100%; }
+
+  .about__grid { gap: 40px; }
+
+  .formation__grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .blog__grid { grid-template-columns: 1fr; gap: 18px; }
+
+  .contact__grid { gap: 28px; }
+
+  .projects__grid { gap: 18px; }
+
+  .services__grid { gap: 16px; }
+
+  .nav__links { padding: 8px 16px 20px; }
+  .nav__link:last-child { border-bottom: none; }
+
+  .footer__inner { gap: 30px; }
+}
+
+/* --- Tablettes (portrait) <= 768px --- */
+@media (max-width: 768px) {
+  .container { padding-inline: 20px; }
+
+  .hero { min-height: auto; padding-bottom: 60px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero__panel { order: -1; max-width: 420px; margin-inline: auto; }
+  .hero__text { display: flex; flex-direction: column; align-items: center; }
+  .hero__cta { justify-content: center; }
+  .hero__socials { justify-content: center; }
+  .hero__intro { max-width: 100%; }
+  .hero__scroll { display: none; }
+
+  .code-window { transform: none; }
+  .code-window:hover { transform: none; }
+
+  .section { padding: 80px 0; }
+  .section__head { text-align: center; margin-inline: auto; margin-bottom: 40px; }
+
+  .about__grid { grid-template-columns: 1fr; gap: 40px; }
+  .about__photo { max-width: 200px; margin-inline: auto; }
+  .about__content { text-align: center; }
+  .about__facts { grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+
+  .skills__grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .services__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-card { padding: 24px; }
+  .service-card__icon { width: 44px; height: 44px; margin-bottom: 14px; }
+  .service-card__icon svg { width: 20px; height: 20px; }
+
+  .projects__grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  .cert__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .formation__grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .blog__grid { grid-template-columns: 1fr; gap: 18px; }
+
+  .contact__grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact__info { text-align: center; }
+  .contact__lead { margin-inline: auto; }
+  .contact__list li { justify-content: center; }
+  .contact__socials { justify-content: center; }
+
+  .timeline { max-width: 100%; }
+
+  .skill-cards { grid-template-columns: 1fr 1fr; }
+
+  .footer__inner { grid-template-columns: 1fr 1fr; gap: 32px; text-align: center; }
+  .footer__brand p { margin-inline: auto; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+}
+
+/* --- Tablettes (paysage) / petites laptops <= 900px --- */
+@media (max-width: 900px) {
+  .hero__inner { gap: 32px; }
+
+  .skills__grid { gap: 40px; }
+
+  .services__grid { grid-template-columns: 1fr 1fr; }
+
+  .projects__grid { grid-template-columns: 1fr 1fr; }
+
+  .cert__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- Laptops moyens <= 1024px --- */
+@media (max-width: 1024px) {
+  .container { padding-inline: 20px; }
+
+  .about__grid { gap: 40px; }
+  .about__photo { max-width: 240px; }
+
+  .skills__grid { gap: 48px; }
+
+  .projects__grid { gap: 20px; }
+
+  .services__grid { gap: 18px; }
+
+  .cert__grid { gap: 16px; }
+
+  .footer__inner { gap: 28px; }
+}
+
+/* --- Écrans très larges > 1400px --- */
+@media (min-width: 1400px) {
+  .container { max-width: 1300px; }
+  .hero__name { font-size: clamp(3.2rem, 5vw, 5rem); }
+  .section { padding: 140px 0; }
+  .section__title { font-size: clamp(2.2rem, 3vw, 3rem); }
+}
+
+/* --- Orientation paysage sur mobile --- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero { min-height: auto; padding-bottom: 40px; }
+  .hero__inner { padding-block: 20px; gap: 20px; }
+  .hero__name { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+  .hero__intro { font-size: .85rem; }
+  .hero__cta { margin-top: 16px; }
+  .hero__socials { margin-top: 16px; }
+  .code-window { max-width: 340px; }
+  .hero__scroll { display: none; }
+}
+
+/* --- Accessibilité : réduire les animations si préféré --- */
+@media (prefers-reduced-motion: reduce) {
+  .hero__blob { animation: none; }
+  .typewriter, .cursor { animation: none; }
+  .hero__scroll span { animation: none; }
+  .skill__fill { transition: none; }
+}
