@@ -1,0 +1,20 @@
+{
+  "name": "Abdoul-raouf Sonhouin — Portfolio",
+  "short_name": "AS Portfolio",
+  "description": "Portfolio d'Abdoul-raouf Sonhouin, développeur full-stack et étudiant en Master IA & Big Data",
+  "start_url": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#0B0F1A",
+  "theme_color": "#0B0F1A",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "technology", "development"],
+  "lang": "fr"
+}

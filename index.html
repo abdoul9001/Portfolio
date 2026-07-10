@@ -3,14 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdoul-raouf Sonhouin — Développeur Full-Stack &amp; IA / Big Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Abdoul-raouf Sonhouin — Développeur Full-Stack & IA / Big Data</title>
   <meta name="description"
-    content="Portfolio d'Abdoul-raouf Sonhouin, développeur full-stack et étudiant en Master IA &amp; Big Data à Lomé, Togo. Découvrez mes projets, compétences et expériences.">
+    content="Portfolio d'Abdoul-raouf Sonhouin, développeur full-stack et étudiant en Master IA & Big Data à Lomé, Togo. Découvrez mes projets, compétences et expériences.">
   <meta name="keywords"
     content="Abdoul-raouf Sonhouin, développeur full-stack, Togo, Lomé, React, Laravel, Django, PostgreSQL, IA, Big Data">
   <meta name="author" content="Abdoul-raouf Sonhouin">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0B0F1A" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F8FC" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -56,10 +60,12 @@
   </script>
 
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="manifest" href="manifest.json">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://formspree.io" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
@@ -67,6 +73,9 @@
 </head>
 
 <body>
+
+  <!-- ============ PROGRESS BAR ============ -->
+  <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progression de la lecture"></div>
 
   <!-- ============ LOADER ============ -->
   <div class="loader" id="loader" aria-hidden="true">
@@ -76,11 +85,14 @@
   <!-- ============ SKIP LINK (a11y) ============ -->
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
+  <!-- ============ MOBILE MENU OVERLAY ============ -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
   <!-- ============ NAVIGATION ============ -->
   <header class="nav" id="nav">
     <div class="nav__inner container">
       <a href="#home" class="nav__logo" aria-label="Retour à l'accueil">
-        <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket">/&gt;</span>
+        <span class="nav__logo-bracket"><</span>AS<span class="nav__logo-bracket">/></span>
       </a>
 
       <nav class="nav__links" id="navLinks" aria-label="Navigation principale">
@@ -96,13 +108,13 @@
       <div class="nav__actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème clair/sombre" aria-pressed="false">
           <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
+            stroke-width="2" aria-hidden="true">
             <circle cx="12" cy="12" r="4" />
             <path
               d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
           </svg>
           <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-            stroke-width="2">
+            stroke-width="2" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         </button>
@@ -129,17 +141,17 @@
           <p class="eyebrow reveal">Bonjour, je m'appelle</p>
           <h1 class="hero__name reveal">Abdoul-raouf<br><span class="text-gradient">SONHOUIN</span></h1>
           <p class="hero__role reveal">
-            <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+            <span class="typewriter" id="typewriter"></span><span class="cursor" aria-hidden="true">|</span>
           </p>
           <p class="hero__intro reveal">
-            Étudiant en <strong>Master 1 IA &amp; Big Data</strong> à l'ESGIS et développeur full-stack basé à
+            Étudiant en <strong>Master 1 IA & Big Data</strong> à l'ESGIS et développeur full-stack basé à
             Lomé, Togo. Je conçois des applications web complètes, du schéma de base de données jusqu'à
             l'interface, avec une attention particulière portée à l'architecture et à la fiabilité.
           </p>
           <div class="hero__cta reveal">
             <a href="#contact" class="btn btn--primary">Me contacter</a>
             <a href="cv/CV_Abdoul-raouf_Sonhouin.pdf" download class="btn btn--ghost">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
               </svg>
               Télécharger mon CV
@@ -147,20 +159,20 @@
           </div>
           <div class="hero__socials reveal">
             <a href="https://github.com/abdoul9001" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.76 2.71 1.25 3.37.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.42.36.78 1.07.78 2.17v3.21c0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z" />
               </svg>
             </a>
             <a href="https://www.linkedin.com/in/abdoul-raouf-sonhouin-96291531b" target="_blank" rel="noopener"
               aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
               </svg>
             </a>
             <a href="mailto:sonhouinabdoulraouf@gmail.com" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M4 4h16v16H4z" opacity="0" />
                 <path d="M3 6l9 7 9-7M3 6v12h18V6H3z" />
               </svg>
@@ -178,7 +190,7 @@
 <span class="kw">const</span> <span class="vr">developpeur</span> = {
   nom: <span class="st">"Abdoul-raouf Sonhouin"</span>,
   role: <span class="st">"Développeur Full-Stack"</span>,
-  etudes: <span class="st">"Master 1 · IA &amp; Big Data"</span>,
+  etudes: <span class="st">"Master 1 · IA & Big Data"</span>,
   ecole: <span class="st">"ESGIS, Lomé"</span>,
   stack: [
     <span class="st">"React"</span>, <span class="st">"Laravel"</span>,
@@ -220,7 +232,7 @@
 
           <div class="about__content reveal">
             <p>
-              Étudiant en <strong>Master 1 IA &amp; Big Data</strong> à l'<strong>ESGIS</strong>, je suis développeur
+              Étudiant en <strong>Master 1 IA & Big Data</strong> à l'<strong>ESGIS</strong>, je suis développeur
               Backend & full-stack et passionné de code depuis plusieurs années. Entre les cours, les stages et mes
               projets
               personnels, je passe une bonne partie de mon temps libre à construire des applications — souvent
@@ -249,7 +261,7 @@
               </div>
               <div class="fact">
                 <span class="fact__label">Formation actuelle</span>
-                <span class="fact__value">Master 1 IA &amp; Big Data — ESGIS</span>
+                <span class="fact__value">Master 1 IA & Big Data — ESGIS</span>
               </div>
               <div class="fact">
                 <span class="fact__label">Langues</span>
@@ -257,7 +269,7 @@
               </div>
               <div class="fact">
                 <span class="fact__label">Disponibilité</span>
-                <span class="fact__value">Ouvert aux stages &amp; missions freelance &amp; télétravail &amp;
+                <span class="fact__value">Ouvert aux stages & missions freelance & télétravail &
                   l'emploi</span>
               </div>
             </div>
@@ -371,7 +383,7 @@
 
               <div class="skill-card">
                 <div class="skill-card__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18V5z"/>
                   <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18V5z"/>
                 </svg>
@@ -382,7 +394,7 @@
 
               <div class="skill-card">
                 <div class="skill-card__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M15 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
                   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
                 </svg>
@@ -393,7 +405,7 @@
 
               <div class="skill-card">
                 <div class="skill-card__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
                   <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
                   <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
@@ -406,7 +418,7 @@
 
               <div class="skill-card">
                 <div class="skill-card__icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
                 </svg>
               </div>
@@ -454,7 +466,7 @@
         <div class="services__grid">
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
               </svg>
             </div>
@@ -464,7 +476,7 @@
 
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <ellipse cx="12" cy="5" rx="8" ry="3" />
                 <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
               </svg>
@@ -475,7 +487,7 @@
 
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <rect x="2" y="6" width="20" height="12" rx="2" />
                 <path d="M2 10h20M6 14h4" />
               </svg>
@@ -486,7 +498,7 @@
 
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path d="M12 2l3 6 6 1-4.5 4.5L17 20l-5-3-5 3 1.5-6.5L4 9l6-1 2-6z" />
               </svg>
             </div>
@@ -496,7 +508,7 @@
 
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path d="M9 18V5l12-2v13M9 9l12-2" />
                 <circle cx="6" cy="18" r="3" />
                 <circle cx="18" cy="16" r="3" />
@@ -508,12 +520,12 @@
 
           <article class="service-card reveal">
             <div class="service-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                 <path
                   d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z" />
               </svg>
             </div>
-            <h3>Documentation &amp; formation</h3>
+            <h3>Documentation & formation</h3>
             <p>Génération de documentation technique claire et transfert de connaissances aux équipes.</p>
           </article>
         </div>
@@ -529,10 +541,10 @@
         </div>
 
         <div class="projects__filter reveal" role="tablist" aria-label="Filtrer les projets">
-          <button class="filter-btn is-active" data-filter="all">Tous</button>
-          <button class="filter-btn" data-filter="pro">Professionnels</button>
-          <button class="filter-btn" data-filter="perso">Personnels</button>
-          <button class="filter-btn" data-filter="academique">Académiques</button>
+          <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Tous</button>
+          <button class="filter-btn" data-filter="pro" role="tab" aria-selected="false">Professionnels</button>
+          <button class="filter-btn" data-filter="perso" role="tab" aria-selected="false">Personnels</button>
+          <button class="filter-btn" data-filter="academique" role="tab" aria-selected="false">Académiques</button>
         </div>
 
         <div class="projects__grid" id="projectsGrid">
@@ -562,7 +574,7 @@
               <span class="project-card__mono">RH · Congés</span>
             </div>
             <div class="project-card__body">
-              <h3>Gestion des congés &amp; permissions</h3>
+              <h3>Gestion des congés & permissions</h3>
               <p>Système développé lors de mon stage à la Banque Atlantique Togo : authentification à double
                 facteur, demandes en ligne et workflow de validation hiérarchique.</p>
                 <div class="project-card__tags">
@@ -776,7 +788,7 @@
         <div class="formation__grid">
           <div class="formation-card reveal">
             <span class="formation-card__year">2025 — 2026</span>
-            <h3>Master 1 — IA &amp; Big Data <em>(en cours)</em></h3>
+            <h3>Master 1 — IA & Big Data <em>(en cours)</em></h3>
             <p>Ecole Supérieure de Gestion d'Informatique et des Sciences (ESGIS)</p>
           </div>
           <div class="formation-card reveal">
@@ -810,12 +822,12 @@
           </div>
           <div class="cert-card reveal">
             <div class="cert-card__logo">JS</div>
-            <h4>JavaScript &amp; React — Développement moderne</h4>
+            <h4>JavaScript & React — Développement moderne</h4>
             <span>Plateforme en ligne · 2024</span>
           </div>
           <div class="cert-card reveal">
             <div class="cert-card__logo">UML</div>
-            <h4>Modélisation UML &amp; conception logicielle</h4>
+            <h4>Modélisation UML & conception logicielle</h4>
             <span>ESGIS · 2024</span>
           </div>
           <div class="cert-card reveal">
@@ -882,14 +894,14 @@
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow">Blog</p>
-          <h2 class="section__title">Notes &amp; articles</h2>
+          <h2 class="section__title">Notes & articles</h2>
           <p class="section__note">Section prête à accueillir mes futurs articles techniques.</p>
         </div>
 
         <div class="blog__grid">
           <article class="blog-card reveal">
             <div class="blog-card__media">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
               </svg>
             </div>
@@ -903,7 +915,7 @@
           </article>
           <article class="blog-card reveal">
             <div class="blog-card__media">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <ellipse cx="12" cy="5" rx="9" ry="3"/>
                 <path d="M3 5v14a9 3 0 0 0 18 0V5"/>
                 <path d="M3 12a9 3 0 0 0 18 0"/>
@@ -918,7 +930,7 @@
           </article>
           <article class="blog-card reveal">
             <div class="blog-card__media">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
@@ -952,7 +964,7 @@
             <ul class="contact__list">
               <li>
                 <span class="contact__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect width="20" height="16" x="2" y="4" rx="2"/>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                   </svg>
@@ -962,7 +974,7 @@
               </li>
               <li>
                 <span class="contact__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
                 </span>
@@ -970,8 +982,8 @@
               </li>
               <li>
                 <span class="contact__icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-10a8 8 0 0 1 16 0z"/>
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
                 </span>
@@ -1027,14 +1039,19 @@
 
   </main>
 
+  <!-- ============ MOBILE STICKY CTA ============ -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#contact" class="btn btn--primary btn--full">Me contacter</a>
+  </div>
+
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#home" class="nav__logo">
-          <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket">/&gt;</span>
+          <span class="nav__logo-bracket"><</span>AS<span class="nav__logo-bracket">/></span>
         </a>
-        <p>Développeur full-stack &amp; étudiant en IA / Big Data, basé à Lomé, Togo.</p>
+        <p>Développeur full-stack & étudiant en IA / Big Data, basé à Lomé, Togo.</p>
       </div>
 
       <div class="footer__col">
@@ -1060,8 +1077,8 @@
     </div>
     <div class="footer__bottom container">
       <p>© <span id="year"></span> Abdoul-raouf Sonhouin. Tous droits réservés.</p>
-      <p>Conçu &amp; développé avec <span class="heart">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <p>Conçu & développé avec <span class="heart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
         </svg>
       </span> à Lomé</p>
@@ -1070,12 +1087,19 @@
 
   <!-- ============ BACK TO TOP ============ -->
   <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>
   </button>
 
   <script src="js/script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function() {});
+      });
+    }
+  </script>
 </body>
 
 </html>
