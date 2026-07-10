@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdoul-raouf Sonhouin — Développeur Full-Stack &amp; IA / Big Data</title>
+  <meta name="description"
+    content="Portfolio d'Abdoul-raouf Sonhouin, développeur full-stack et étudiant en Master IA &amp; Big Data à Lomé, Togo. Découvrez mes projets, compétences et expériences.">
+  <meta name="keywords"
+    content="Abdoul-raouf Sonhouin, développeur full-stack, Togo, Lomé, React, Laravel, Django, PostgreSQL, IA, Big Data">
+  <meta name="author" content="Abdoul-raouf Sonhouin">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdoul-raouf Sonhouin — Développeur Full-Stack">
+  <meta property="og:description"
+    content="Portfolio professionnel : projets, compétences et parcours d'un développeur full-stack passionné basé à Lomé, Togo.">
+  <meta property="og:image" content="images/og-cover.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__code">const&nbsp;portfolio&nbsp;=&nbsp;await&nbsp;init();</span>
+  </div>
+
+  <!-- ============ SKIP LINK (a11y) ============ -->
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="nav__logo" aria-label="Retour à l'accueil">
+        <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Navigation principale">
+        <a href="#about" class="nav__link"><span class="nav__num">01</span>À propos</a>
+        <a href="#skills" class="nav__link"><span class="nav__num">02</span>Compétences</a>
+        <a href="#services" class="nav__link"><span class="nav__num">03</span>Services</a>
+        <a href="#projects" class="nav__link"><span class="nav__num">04</span>Projets</a>
+        <a href="#experience" class="nav__link"><span class="nav__num">05</span>Expérience</a>
+        <a href="#blog" class="nav__link"><span class="nav__num">06</span>Blog</a>
+        <a href="#contact" class="nav__link"><span class="nav__num">07</span>Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème clair/sombre" aria-pressed="false">
+          <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+        <a href="cv/CV_Abdoul-raouf_Sonhouin.pdf" download class="btn btn--ghost btn--sm nav__cv">CV</a>
+        <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow reveal">// bonjour, je m'appelle</p>
+          <h1 class="hero__name reveal">Abdoul-raouf<br><span class="text-gradient">Sonhouin</span></h1>
+          <p class="hero__role reveal">
+            <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+          </p>
+          <p class="hero__intro reveal">
+            Étudiant en <strong>Master 1 IA &amp; Big Data</strong> à l'ESGIS et développeur full-stack basé à
+            Lomé, Togo. Je conçois des applications web complètes, du schéma de base de données jusqu'à
+            l'interface, avec une attention particulière portée à l'architecture et à la fiabilité.
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#contact" class="btn btn--primary">Me contacter</a>
+            <a href="cv/CV_Abdoul-raouf_Sonhouin.pdf" download class="btn btn--ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" />
+              </svg>
+              Télécharger mon CV
+            </a>
+          </div>
+          <div class="hero__socials reveal">
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.76 2.71 1.25 3.37.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.42.36.78 1.07.78 2.17v3.21c0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
+            <a href="mailto:sonhouinabdoulraouf@gmail.com" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16v16H4z" opacity="0" />
+                <path d="M3 6l9 7 9-7M3 6v12h18V6H3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__panel reveal" aria-hidden="true">
+          <div class="code-window">
+            <div class="code-window__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="code-window__title">profil.js</span>
+            </div>
+            <pre class="code-window__body"><code><span class="cm">// Résumé rapide</span>
+<span class="kw">const</span> <span class="vr">developpeur</span> = {
+  nom: <span class="st">"Abdoul-raouf Sonhouin"</span>,
+  role: <span class="st">"Développeur Full-Stack"</span>,
+  etudes: <span class="st">"Master 1 · IA &amp; Big Data"</span>,
+  ecole: <span class="st">"ESGIS, Lomé"</span>,
+  stack: [
+    <span class="st">"React"</span>, <span class="st">"Laravel"</span>,
+    <span class="st">"Django"</span>, <span class="st">"PostgreSQL"</span>,
+    <span class="st">"Java"</span>, <span class="st">"C/C++"</span>
+  ],
+  localisation: <span class="st">"Lomé, Togo"</span>,
+  disponible: <span class="kw-lit">true</span>,
+};
+
+<span class="fn">export default</span> developpeur;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Défiler vers le bas">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 01 — Qui je suis</p>
+          <h2 class="section__title">À propos de moi</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__photo reveal">
+            <div class="about__photo-frame">
+              <div class="about__photo-placeholder">AS</div>
+            </div>
+            <div class="about__badge">
+              <strong>23</strong>
+              <span>ans</span>
+            </div>
+          </div>
+
+          <div class="about__content reveal">
+            <p>
+              Étudiant en <strong>Master 1 IA &amp; Big Data</strong> à l'<strong>ESGIS</strong>, je suis développeur
+              full-stack et passionné de code depuis plusieurs années. Entre les cours, les stages et mes projets
+              personnels, je passe une bonne partie de mon temps libre à construire des applications — souvent
+              pour le plaisir d'apprendre un nouvel outil ou de résoudre un problème concret.
+            </p>
+            <p>
+              J'aime particulièrement le moment où je peux expliquer à quelqu'un comment fonctionne ce que je
+              construis. Cette approche pédagogique guide aussi ma façon de coder : documenter, structurer et
+              penser l'architecture avant d'écrire la première ligne.
+            </p>
+            <p>
+              Mon objectif est de conjuguer développement logiciel et intelligence artificielle pour créer des
+              produits utiles, en particulier autour de problématiques locales comme les paiements mobiles et
+              le commerce social en Afrique de l'Ouest.
+            </p>
+
+            <div class="about__facts">
+              <div class="fact">
+                <span class="fact__label">Localisation</span>
+                <span class="fact__value">Agoè – Avédji, Lomé, Togo</span>
+              </div>
+              <div class="fact">
+                <span class="fact__label">Formation actuelle</span>
+                <span class="fact__value">Master 1 IA &amp; Big Data — ESGIS</span>
+              </div>
+              <div class="fact">
+                <span class="fact__label">Langues</span>
+                <span class="fact__value">Français, Anglais, Éwé, Kotokoli</span>
+              </div>
+              <div class="fact">
+                <span class="fact__label">Disponibilité</span>
+                <span class="fact__value">Ouvert aux stages &amp; missions freelance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 02 — Boîte à outils</p>
+          <h2 class="section__title">Compétences</h2>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skills__col reveal">
+            <h3 class="skills__col-title">Développement</h3>
+
+            <div class="skill">
+              <div class="skill__top"><span>HTML / CSS / JavaScript</span><span>92%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="92"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>React</span><span>85%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>PHP / Laravel</span><span>88%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="88"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>Python / Django</span><span>82%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="82"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>Java</span><span>78%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="78"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>PostgreSQL / MySQL</span><span>86%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="86"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>C / C++</span><span>70%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>Git / GitHub</span><span>90%</span></div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-width="90"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills__col reveal">
+            <h3 class="skills__col-title">Compétences personnelles</h3>
+            <div class="skill-cards">
+              <div class="skill-card">
+                <div class="skill-card__icon">🧩</div>
+                <h4>Résolution de problèmes</h4>
+                <p>Décomposer un problème concret en modèle de données et en architecture claire.</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon">🗣️</div>
+                <h4>Pédagogie &amp; communication</h4>
+                <p>Expliquer simplement des choix techniques à des profils non-techniques.</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon">🤝</div>
+                <h4>Travail d'équipe</h4>
+                <p>Collaboration fluide en environnement agile, revue de code et pair-programming.</p>
+              </div>
+              <div class="skill-card">
+                <div class="skill-card__icon">🎯</div>
+                <h4>Rigueur &amp; autonomie</h4>
+                <p>Documentation, tests et gestion du temps sur des projets menés en autonomie.</p>
+              </div>
+            </div>
+
+            <h3 class="skills__col-title skills__col-title--spaced">Méthodes &amp; outils</h3>
+            <div class="tags">
+              <span class="tag">UML</span>
+              <span class="tag">PowerAMC</span>
+              <span class="tag">REST API</span>
+              <span class="tag">JWT / OAuth</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Django REST Framework</span>
+              <span class="tag">Architecture logicielle</span>
+              <span class="tag">Mobile Money / Paiement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 03 — Ce que je propose</p>
+          <h2 class="section__title">Services</h2>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+              </svg>
+            </div>
+            <h3>Développement web full-stack</h3>
+            <p>Applications complètes — de la base de données à l'interface — avec React, Laravel ou Django.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+              </svg>
+            </div>
+            <h3>Conception de bases de données</h3>
+            <p>Modélisation UML, schémas PostgreSQL/MySQL optimisés et documentation technique claire.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="6" width="20" height="12" rx="2" />
+                <path d="M2 10h20M6 14h4" />
+              </svg>
+            </div>
+            <h3>Intégration de paiement mobile</h3>
+            <p>Connexion d'aggrégateurs de paiement mobile money adaptés aux marchés d'Afrique de l'Ouest.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2l3 6 6 1-4.5 4.5L17 20l-5-3-5 3 1.5-6.5L4 9l6-1 2-6z" />
+              </svg>
+            </div>
+            <h3>Architecture logicielle</h3>
+            <p>Conception d'architectures robustes et évolutives, pensées pour durer et être maintenues.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M9 18V5l12-2v13M9 9l12-2" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>
+            </div>
+            <h3>Consulting technique</h3>
+            <p>Accompagnement sur le choix des technologies et la structuration d'un projet naissant.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z" />
+              </svg>
+            </div>
+            <h3>Documentation &amp; formation</h3>
+            <p>Génération de documentation technique claire et transfert de connaissances aux équipes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 04 — Ma production</p>
+          <h2 class="section__title">Projets</h2>
+        </div>
+
+        <div class="projects__filter reveal" role="tablist" aria-label="Filtrer les projets">
+          <button class="filter-btn is-active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="pro">Professionnels</button>
+          <button class="filter-btn" data-filter="perso">Personnels</button>
+          <button class="filter-btn" data-filter="academique">Académiques</button>
+        </div>
+
+        <div class="projects__grid" id="projectsGrid">
+
+          <article class="project-card reveal" data-cat="perso">
+            <div class="project-card__media project-card__media--gradient1">
+              <span class="project-card__mono">Selvy</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Selvy — Commerce social</h3>
+              <p>Plateforme de commerce social pensée pour le Togo et l'Afrique de l'Ouest, avec intégration
+                d'aggrégateurs de paiement mobile money (T-Money, Flooz, Mixx, Gozem).</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">PostgreSQL</span>
+                <span class="tag tag--sm">Node.js</span>
+                <span class="tag tag--sm">Paiement mobile</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Voir le code sur GitHub">Code</a>
+                <a href="#" class="project-link" aria-label="Voir la démo en ligne">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="pro">
+            <div class="project-card__media project-card__media--gradient2">
+              <span class="project-card__mono">RH · Congés</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Gestion des congés &amp; permissions</h3>
+              <p>Système développé lors de mon stage à la Banque Atlantique Togo : authentification à double
+                facteur, demandes en ligne et workflow de validation hiérarchique.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Spring Boot</span>
+                <span class="tag tag--sm">Java</span>
+                <span class="tag tag--sm">React</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="perso">
+            <div class="project-card__media project-card__media--gradient3">
+              <span class="project-card__mono">RechBiblio</span>
+            </div>
+            <div class="project-card__body">
+              <h3>RechBiblio — Bibliothèque universitaire</h3>
+              <p>Lecture de livres en ligne, téléchargement automatique des ouvrages libres de droits et
+                tableaux de bord dédiés par rôle (membre, bibliothécaire, admin).</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Django REST</span>
+                <span class="tag tag--sm">React</span>
+                <span class="tag tag--sm">Google OAuth</span>
+                <span class="tag tag--sm">JWT</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="perso">
+            <div class="project-card__media project-card__media--gradient1">
+              <span class="project-card__mono">RechImmo</span>
+            </div>
+            <div class="project-card__body">
+              <h3>RechImmo — Plateforme immobilière</h3>
+              <p>Annonces immobilières avec recherche par critères et interface entièrement responsive.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Laravel</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+                <span class="tag tag--sm">UML</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="academique">
+            <div class="project-card__media project-card__media--gradient2">
+              <span class="project-card__mono">E-commerce</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Site e-commerce</h3>
+              <p>Catalogue produits, panier, gestion de commande et paiement en ligne.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Laravel</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="academique">
+            <div class="project-card__media project-card__media--gradient3">
+              <span class="project-card__mono">Restaurant</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Site de restaurant en ligne</h3>
+              <p>Catalogue de nourriture, commande, paiement et suivi de livraison.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Laravel</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="academique">
+            <div class="project-card__media project-card__media--gradient1">
+              <span class="project-card__mono">Bibliothèque</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Gestion d'une bibliothèque</h3>
+              <p>Catalogue de livres, gestion des emprunts, des retours et des adhérents.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">React</span>
+                <span class="tag tag--sm">Django</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="academique">
+            <div class="project-card__media project-card__media--gradient2">
+              <span class="project-card__mono">Pharmacie</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Gestion d'une pharmacie</h3>
+              <p>Application de gestion de stock et de ventes conçue avec modélisation PowerAMC.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Java</span>
+                <span class="tag tag--sm">MySQL</span>
+                <span class="tag tag--sm">PowerAMC</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-cat="academique">
+            <div class="project-card__media project-card__media--gradient3">
+              <span class="project-card__mono">Hôtel</span>
+            </div>
+            <div class="project-card__body">
+              <h3>Réservation d'hôtel</h3>
+              <p>Système de réservation de billets d'hôtel avec gestion des disponibilités.</p>
+              <div class="project-card__tags">
+                <span class="tag tag--sm">Laravel</span>
+                <span class="tag tag--sm">MySQL</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link">Code</a>
+                <a href="#" class="project-link">Démo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPÉRIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 05 — Mon parcours</p>
+          <h2 class="section__title">Expérience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">Juin — Octobre 2025</span>
+              <h3>Stage Architecte Logiciel</h3>
+              <p class="timeline__org">Banque Atlantique Togo (BATG)</p>
+              <p>Conception et développement d'un système de gestion des congés et permissions
+                (Spring Boot, Java, PostgreSQL, React, UML).</p>
+              <ul class="timeline__list">
+                <li>Authentification à double facteur</li>
+                <li>Demande et validation en ligne</li>
+                <li>Suivi des soldes de congés</li>
+                <li>Workflow de validation hiérarchique</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">2023 — 2026</span>
+              <h3>Développeur freelance / projets personnels</h3>
+              <p class="timeline__org">Projets indépendants</p>
+              <p>Conception et développement de plusieurs applications complètes (e-commerce, immobilier,
+                bibliothèque universitaire, réservation), en autoformation continue.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__date">Depuis 2025</span>
+              <h3>Selvy — Fondateur technique</h3>
+              <p class="timeline__org">Projet personnel</p>
+              <p>Développement d'une plateforme de commerce social intégrant plusieurs opérateurs de
+                paiement mobile money pour le marché togolais.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section class="section section--alt" id="formation">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// Formation</p>
+          <h2 class="section__title">Formation</h2>
+        </div>
+
+        <div class="formation__grid">
+          <div class="formation-card reveal">
+            <span class="formation-card__year">2025 — 2026</span>
+            <h3>Master 1 — IA &amp; Big Data <em>(en cours)</em></h3>
+            <p>Ecole Supérieure de Gestion d'Informatique et des Sciences (ESGIS)</p>
+          </div>
+          <div class="formation-card reveal">
+            <span class="formation-card__year">2025</span>
+            <h3>Licence en Architecture Logicielle</h3>
+            <p>Ecole Supérieure de Gestion d'Informatique et des Sciences (ESGIS)</p>
+          </div>
+          <div class="formation-card reveal">
+            <span class="formation-card__year">2022</span>
+            <h3>Baccalauréat Scientifique (Bac D)</h3>
+            <p>Lycée Avédji-Elavagnon (LYAVEL)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// Certifications</p>
+          <h2 class="section__title">Certifications</h2>
+          <p class="section__note">Exemples à personnaliser avec vos certifications réelles.</p>
+        </div>
+
+        <div class="cert__grid">
+          <div class="cert-card reveal">
+            <div class="cert-card__logo">DB</div>
+            <h4>Bases de données PostgreSQL avancées</h4>
+            <span>Plateforme en ligne · 2025</span>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-card__logo">JS</div>
+            <h4>JavaScript &amp; React — Développement moderne</h4>
+            <span>Plateforme en ligne · 2024</span>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-card__logo">UML</div>
+            <h4>Modélisation UML &amp; conception logicielle</h4>
+            <span>ESGIS · 2024</span>
+          </div>
+          <div class="cert-card reveal">
+            <div class="cert-card__logo">AI</div>
+            <h4>Introduction au Machine Learning</h4>
+            <span>Plateforme en ligne · 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TÉMOIGNAGES ============ -->
+    <section class="section section--alt" id="testimonials">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// Témoignages</p>
+          <h2 class="section__title">Ce qu'on dit de mon travail</h2>
+          <p class="section__note">Exemples à personnaliser avec de vrais retours.</p>
+        </div>
+
+        <div class="testimonials reveal">
+          <div class="testimonials__track" id="testiTrack">
+            <figure class="testimonial">
+              <p>« Abdoul-raouf a conçu une architecture propre et bien documentée pour notre système
+                de gestion des congés. Un vrai sens du détail. »</p>
+              <figcaption>
+                <span class="testimonial__avatar">MK</span>
+                <div>
+                  <strong>Maître de stage</strong>
+                  <span>Banque Atlantique Togo</span>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <p>« Sa capacité à expliquer des choix techniques complexes de façon simple a beaucoup
+                facilité nos échanges pendant le projet. »</p>
+              <figcaption>
+                <span class="testimonial__avatar">FA</span>
+                <div>
+                  <strong>Chef de projet</strong>
+                  <span>Exemple d'entreprise partenaire</span>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <p>« Curieux, rigoureux et toujours prêt à approfondir un sujet. Un profil qui allie
+                développement et vision produit. »</p>
+              <figcaption>
+                <span class="testimonial__avatar">RT</span>
+                <div>
+                  <strong>Enseignant</strong>
+                  <span>ESGIS</span>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="testimonials__dots" id="testiDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section class="section" id="blog">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// Blog</p>
+          <h2 class="section__title">Notes &amp; articles</h2>
+          <p class="section__note">Section prête à accueillir mes futurs articles techniques.</p>
+        </div>
+
+        <div class="blog__grid">
+          <article class="blog-card reveal">
+            <div class="blog-card__media">📝</div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">À venir</span>
+              <h3>Choisir un aggrégateur de paiement mobile money au Togo</h3>
+              <p>Retour d'expérience sur la comparaison des solutions disponibles pour un produit
+                de commerce social.</p>
+              <span class="blog-card__link">Lire l'article →</span>
+            </div>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__media">🗄️</div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">À venir</span>
+              <h3>Modéliser une base PostgreSQL pour du commerce social</h3>
+              <p>Les décisions de schéma qui comptent quand le produit doit évoluer vite.</p>
+              <span class="blog-card__link">Lire l'article →</span>
+            </div>
+          </article>
+          <article class="blog-card reveal">
+            <div class="blog-card__media">🔐</div>
+            <div class="blog-card__body">
+              <span class="blog-card__date">À venir</span>
+              <h3>Authentification double facteur avec Spring Boot</h3>
+              <p>Ce que j'ai appris en implémentant la 2FA lors de mon stage.</p>
+              <span class="blog-card__link">Lire l'article →</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">// 07 — Discutons</p>
+          <h2 class="section__title">Contact</h2>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <p class="contact__lead">
+              Un projet, une opportunité de stage ou simplement une question technique ?
+              N'hésitez pas à me contacter.
+            </p>
+
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon">✉️</span>
+                <div><span>Email</span><a href="mailto:sonhouinabdoulraouf@gmail.com">sonhouinabdoulraouf@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact__icon">📞</span>
+                <div><span>Téléphone</span><a href="tel:+22870371360">+228 70 37 13 60</a></div>
+              </li>
+              <li>
+                <span class="contact__icon">📍</span>
+                <div><span>Localisation</span><a href="#contactMap">Agoè – Avédji, Lomé, Togo</a></div>
+              </li>
+            </ul>
+
+            <div class="contact__socials">
+              <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+              <a href="mailto:sonhouinabdoulraouf@gmail.com" aria-label="Email">Email</a>
+            </div>
+
+            <div class="contact__map" id="contactMap">
+              <iframe title="Localisation à Lomé, Togo"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=1.18%2C6.16%2C1.28%2C6.22&layer=mapnik"
+                loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+              <span class="form-error" data-for="name"></span>
+            </div>
+            <div class="form-row">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="form-error" data-for="email"></span>
+            </div>
+            <div class="form-row">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" required>
+              <span class="form-error" data-for="subject"></span>
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <span class="form-error" data-for="message"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Envoyer le message
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="nav__logo">
+          <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket">/&gt;</span>
+        </a>
+        <p>Développeur full-stack &amp; étudiant en IA / Big Data, basé à Lomé, Togo.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#experience">Expérience</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Réseaux</h4>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:sonhouinabdoulraouf@gmail.com">Email</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+22870371360">+228 70 37 13 60</a>
+        <a href="mailto:sonhouinabdoulraouf@gmail.com">sonhouinabdoulraouf@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span id="year"></span> Abdoul-raouf Sonhouin. Tous droits réservés.</p>
+      <p>Conçu &amp; développé avec <span class="heart">♥</span> à Lomé</p>
+    </div>
+  </footer>
+
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
